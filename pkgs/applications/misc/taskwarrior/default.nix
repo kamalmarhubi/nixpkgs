@@ -11,6 +11,8 @@ stdenv.mkDerivation rec {
     sha256 = "0wxcfq0n96vmcbwrlk2x377k8cc5k4i64ca6p02y74g6168ji6ib";
   };
 
+  patches = [ ./directory-cwd-apple.patch ];
+
   nativeBuildInputs = [ cmake libuuid ];
 
   meta = {
@@ -18,6 +20,6 @@ stdenv.mkDerivation rec {
     homepage = http://taskwarrior.org;
     license = stdenv.lib.licenses.mit;
     maintainers = [stdenv.lib.maintainers.marcweber];
-    platforms = stdenv.lib.platforms.linux;
+    platforms = stdenv.lib.platforms.all;
   };
 }
